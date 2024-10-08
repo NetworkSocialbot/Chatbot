@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Test</title>
+    <style>
+    .alert8 {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- Votre contenu -->
+    <div class="pop" id="popContent">BF35456775757575766666</div>
+    <div class="copy">Copier</div>
+    <div class="alert8">Copié avec succès</div>
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/6705b10dcec6d0125df378d6/1i9n3n7lj';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var copydiv = document.querySelector(".copy");
+        var popdiv = document.querySelector("#popContent"); // Correction ici
+        var alertDiv = document.querySelector(".alert8");
+
+        copydiv.addEventListener("click", function() {
+            var textToCopy = popdiv.textContent;
+
+            // Create a temporary textarea to copy the content
+            var tempTextarea = document.createElement("textarea");
+            tempTextarea.value = textToCopy;
+            document.body.appendChild(tempTextarea);
+
+            // Select and copy the text in the temporary textarea
+            tempTextarea.select();
+            document.execCommand("copy");
+
+            // Remove the temporary textarea
+            document.body.removeChild(tempTextarea);
+
+            // Show the alert div
+            alertDiv.style.display = "block";
+
+            // Hide the alert after 2 seconds
+            setTimeout(function() {
+                alertDiv.style.display = "none";
+            }, 2000);
+        });
+    });
+    </script>
+</body>
+</html>
